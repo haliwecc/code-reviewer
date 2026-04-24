@@ -9,10 +9,11 @@ export default function Home() {
   const [result, setResult] = useState("");
 
   const handleSubmit=async()=>{
+    try{
     const res= await fetch("http://localhost:8080/api/review",{
       method:"POST",
       headers:{
-        "Content-Type":"application/json"
+        "Content-Type":"text/plain"
       },
       body:JSON.stringify({
         code,
@@ -21,8 +22,15 @@ export default function Home() {
         level
       })
       });
+if(!res.ok){
+  throw new Error("Failed to fetch review");
+}
       const data=await res.json();
       setResult(data);
+    }
+    catch(error){
+      console.error("Error:",error);
+    }
   }
 
   return (
