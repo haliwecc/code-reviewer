@@ -39,10 +39,12 @@ if(!res.ok){
   return (
   <>
   <main >
-      <p>Please enter your code:</p>
-      <input type="text" value={code} onChange={(event) => setCode(event.target.value)} className="code-input" />
+    <div className="split user">
+      <div className="centered">
+      <textarea value={code} onChange={(event) => setCode(event.target.value)} placeholder="Enter your code here..."/>
+    
       <div className="user">
-        <p1>Language:</p1>
+        <p>Language:</p>
         <select value={language} onChange={(event) => setLanguage(event.target.value)} id="languages">
           <option value="java">Java</option>
           <option value="python">Python</option>
@@ -65,8 +67,15 @@ if(!res.ok){
       <button onClick={handleSubmit} className="submit-button" disabled={loading}>
         {loading ? "Reviewing..." : "Review Code"}
       </button>
+      </div>
+      </div>
+
+      <div className="split ai">
+        <div className="centered">
       {loading && <p>Loading...</p>}
       <div className="result">{result}</div>
+      </div>
+      </div>
     </main>
     
     </>
