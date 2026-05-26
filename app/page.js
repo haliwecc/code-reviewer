@@ -27,7 +27,7 @@ export default function Home() {
         throw new Error("Failed to fetch review");
       }
       const data = await res.text();
-      setResult(data);
+      setResult(divideResponse(data));
     }
     catch (error) {
       console.error("Error:", error);
@@ -85,7 +85,7 @@ export default function Home() {
             placeholder="Paste your code here..."
           />
 
-           <div className="label">Explanation level</div>
+          <div className="label">Explanation level</div>
           <div className="chip-row">
             {["beginner", "intermediate", "advanced"].map(l => (
               <button
@@ -101,29 +101,23 @@ export default function Home() {
             {loading ? "Reviewing..." : "Submit for review"}
           </button>
 
-          <div className="right">
-            {!result && !loading && (
-            <div className="empty-state">
-              Paste your code and click Review to get started
-            </div>
-          )}
-          </div>
 
-           {loading && (
+
+          {loading && (
             <div className="loading-text">
-              Thinking... 
+              Thinking...
             </div>
           )}
 
- {result?.error && (
-            <div className="empty-state" style={{color:"#ffaaaa"}}>
+          {result?.error && (
+            <div className="empty-state" style={{ color: "#ffaaaa" }}>
               {result.error}
             </div>
           )}
 
           {result && !result.error && (
             <>
-            {result.bugs.length > 0 && (
+              {result.bugs.length > 0 && (
                 <div>
                   <div className="sec-title">Bugs found</div>
                   {result.bugs.map((bug, i) => (
@@ -135,7 +129,7 @@ export default function Home() {
                 </div>
               )}
 
-{result.bugs.length === 0 && (
+              {result.bugs.length === 0 && (
                 <div>
                   <div className="sec-title">Bugs found</div>
                   <div className="bug-item">
@@ -145,8 +139,8 @@ export default function Home() {
                   </div>
                 </div>
               )}
-            
- {result.improvements.length > 0 && (
+
+              {result.improvements.length > 0 && (
                 <div>
                   <div className="sec-title">Improvements</div>
                   {result.improvements.map((imp, i) => (
@@ -161,7 +155,14 @@ export default function Home() {
                 <div className="sec-title">Full review</div>
                 <div className="full-review">{result.full}</div>
               </div>
-            </> 
+            </>
+          )}
+        </div>
+        <div className="right">
+          {!result && !loading && (
+            <div className="empty-state">
+              Paste your code and click Review to get started
+            </div>
           )}
         </div>
       </main>
