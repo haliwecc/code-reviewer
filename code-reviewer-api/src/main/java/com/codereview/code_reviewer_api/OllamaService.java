@@ -28,46 +28,23 @@ public class OllamaService {
     }
 
     private String buildPrompt(String code, String level) {// exact instructions to send
-        if (level.equals("beginner")) {
-            return """
-                    You are a senior software engineer.
-
-                    Review this code and return:
-                    - Bugs
-                    - Improvements
-                    - Security issues
-
-                    Code:
-                    """ + code;
-        } else if (level.equals("intermediate")) {
-            return """
-                    You are a senior software engineer.
-
-                    Review this code and return:
-                    - Bugs
-                    - Improvements
-                    - Security issues
-
-                    Code:
-                    """ + code;
-        } else if (level.equals("advanced")) {
-            return """
-                    You are a senior software engineer.
-                    Review this code and return:
-                    - Bugs
-                    - Improvements
-                    - Security issues
-                    Code:
-                    """ + code;
-        } else {
-            return """
-                    You are a senior software engineer.
-                    Review this code and return:
-                    - Bugs
-                    - Improvements
-                    - Security issues
-                    Code:
-                    """ + code;
-        }
+       String style= switch(level){
+        case "beginner" -> "Explain the code like i am 5 years old and provide suggestions for improvement.";
+        case "intermediate" -> "Give interesting word analogiesand context ";
+        case "advanced" -> "Provide a detailed review of the code, including potential bugs, performance issues, and best practices.";
+      default-> "Be clear and helpful.";
+       };
+       return """
+               You are a code reviewer. Your task is to review the following code and provide feedback based on the specified level of detail: %s
+               Respond using this format alone:
+               BUGS:
+               -List each potential bugs or issues in the code on its own linestarting with a dash
+                SUGGESTIONS:
+                -List each suggestion for improvement on its own line starting with a dash
+                FULL REVIEW:
+                -A medium length detailedparagraph providing a comprehensive review of the code.
+                Code to review:
+                 """.formatted(style) + code ;
+       
     }
 }
