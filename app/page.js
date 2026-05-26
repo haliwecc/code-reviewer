@@ -37,8 +37,9 @@ export default function Home() {
   }
 
   const divideResponse = (text) => {//A function that recieves the AI response(text)
+    console.log("RAW OLLAMA RESPONSE:", text);
     const extract = (heading) => {//Function that extracts sections like bugs and improvements based on the heading
-      const regex = new RegExp('${heading}:\\s*([\\s\\s]*?)(?=\\n[A-Z]+:|$)', "i");//Build a regex to find the section based on the heading
+      const regex = new RegExp(`${heading}:\\s*([\\s\\S]*?)(?=\\n[A-Z]+:|$)`, "i");//Build a regex to find the section based on the heading
       const match = text.match(regex);//Runs a regex on the AI response
       if (!match) {//If it doesnt exist return an empty array
         return [];
@@ -48,13 +49,11 @@ export default function Home() {
         .map(l => l.replace(/^[-*•]\s*/, "").trim())
         .filter(Boolean);//Remove empty lines
     };
-
+    const bugs = extract("BUGS");
+    const improvements = extract("IMPROVEMENTS");
     const fullMatch = text.match(/FULL REVIEW:\s*([\s\S]*?)$/i);//Extract the full review section if it exists
-    return {
-      bugs: extract("BUGS"),
-      improvements: extract("IMPROVEMENTS"),
-      fullReview: fullMatch ? fullMatch[1].trim() : text,
-    };
+    const fullReview = fullMatch ? fullMatch[1].trim() : text;
+    return { bugs, improvements, fullReview };
   };
 
   return (
@@ -103,6 +102,15 @@ export default function Home() {
 
 
 
+
+
+        </div>
+        <div className="right">
+          {!result && !loading && (
+            <div className="empty-state">
+              Paste your code and click Review to get started
+            </div>
+          )}
           {loading && (
             <div className="loading-text">
               Thinking...
@@ -145,6 +153,7 @@ export default function Home() {
                   <div className="sec-title">Improvements</div>
                   {result.improvements.map((imp, i) => (
                     <div key={i} className="imp-item">
+                      <div className="imp-dot"></div>
                       <div className="imp-text">{imp}</div>
                     </div>
                   ))}
@@ -153,16 +162,9 @@ export default function Home() {
 
               <div>
                 <div className="sec-title">Full review</div>
-                <div className="full-review">{result.full}</div>
+                <div className="full-review">{result.fullReview}</div>
               </div>
             </>
-          )}
-        </div>
-        <div className="right">
-          {!result && !loading && (
-            <div className="empty-state">
-              Paste your code and click Review to get started
-            </div>
           )}
         </div>
       </main>
