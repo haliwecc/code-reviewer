@@ -39,7 +39,7 @@ public class OllamaService {
                Respond using this format alone:
                BUGS:
                -List each potential bugs or issues in the code on its own linestarting with a dash
-                SUGGESTIONS:
+                Improvements:
                 -List each suggestion for improvement on its own line starting with a dash
                 FULL REVIEW:
                 -A medium length detailedparagraph providing a comprehensive review of the code.
