@@ -10,54 +10,7 @@
   }
 }
 
-.split{/*Reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_split_screen*/
-  height: 100%;
-  width: 50%;
-  position:fixed;
-  z-index:1;
-  top:0;
-  overflow-x:hidden;
-  padding-top:20px;
-}
-.ai{
-  right:0;
-}
-.user{
-  left:0;
-}
-.result{
-  background-color:#f3f4f6;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 6px rgba(0,0,0,0.1);
-  margin-top:20px;
-  color:black;
-}
 
-
-.split user,textarea {
-  background-color:#ededed;
-  width: 700px;
-  height: 600px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-.split user,.user-option{
-  display: inline-block;
-  width: 300px;
-  height: 100px;
-  gap: 500px;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
 
 html {
   height: 100%;
@@ -74,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(135deg, #311131 0%, #12447E 50%, #0E92D2 100%);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
