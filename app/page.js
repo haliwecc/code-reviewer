@@ -70,7 +70,7 @@ export default function Home() {
             {["java", "python", "javascript"].map(l => (
               <button
                 key={l}
-                className={`chip ${language === l ? "active" : ""}`}
+                className={`buttons ${language === l ? "active" : ""}`}
                 onClick={() => setLanguage(l)}>
                 {l.charAt(0).toUpperCase() + l.slice(1)}
               </button>
@@ -89,7 +89,7 @@ export default function Home() {
             {["beginner", "intermediate", "advanced"].map(l => (
               <button
                 key={l}
-                className={`chip ${level === l ? "active" : ""}`}
+                className={`buttons ${level === l ? "active" : ""}`}
                 onClick={() => setLevel(l)}>
                 {l.charAt(0).toUpperCase() + l.slice(1)}
               </button>
@@ -130,7 +130,7 @@ export default function Home() {
                   <div className="sec-title">Bugs found</div>
                   {result.bugs.map((bug, i) => (
                     <div key={i} className="bug-item">
-                      <div className="bug-dot"></div>
+                      <div className="bullet-point"></div>
                       <div className="bug-text">{bug}</div>
                     </div>
                   ))}
@@ -152,19 +152,21 @@ export default function Home() {
                 <div>
                   <div className="sec-title">Improvements</div>
                   {result.improvements.map((imp, i) => (
-                    <div key={i} className="imp-item">
-                      <div className="imp-dot"></div>
-                      <div className="imp-text">{imp}</div>
+                    <div key={i} className="improve-item">
+                      <div className="improve-dot"></div>
+                      <div className="improve-text">{imp}</div>
                     </div>
                   ))}
                 </div>
               )}
+
 {result.fullReview && result.fullReview.length > 0 && (
               <div>
                 <div className="sec-title">Full review</div>
                 <div className="full-review">{result.fullReview}</div>
               </div>
 )}
+
             </>
           )}
         </div>
