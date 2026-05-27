@@ -102,6 +102,18 @@ align-items: start;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
+.sec-title{
+  font-size: 20px;
+  font-weight: 500px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+.row{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
 html,
 body {
   max-width: 100vw;

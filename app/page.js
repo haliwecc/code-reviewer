@@ -3,9 +3,9 @@ import { useState } from "react";
 
 export default function Home() {
   const [code, setCode] = useState("");
-  const [language, setLanguage] = useState("Java");
+  const [language, setLanguage] = useState("java");
   const [loading, setLoading] = useState(false);
-  const [level, setLevel] = useState("Medium");//do not commit with the API password
+  const [level, setLevel] = useState("beginner");//do not commit with the API password
   const [result, setResult] = useState("");
 
   const handleSubmit = async () => {
@@ -66,7 +66,7 @@ export default function Home() {
         <div className="left">
 
           <div className="label">Language</div>
-          <div className="chip-row">
+          <div className="row">
             {["java", "python", "javascript"].map(l => (
               <button
                 key={l}
@@ -85,7 +85,7 @@ export default function Home() {
           />
 
           <div className="label">Explanation level</div>
-          <div className="chip-row">
+          <div className="row">
             {["beginner", "intermediate", "advanced"].map(l => (
               <button
                 key={l}
@@ -118,7 +118,7 @@ export default function Home() {
           )}
 
           {result?.error && (
-            <div className="empty-state" style={{ color: "#ffaaaa" }}>
+            <div className="empty-state">
               {result.error}
             </div>
           )}
@@ -159,11 +159,12 @@ export default function Home() {
                   ))}
                 </div>
               )}
-
+{result.fullReview && result.fullReview.length > 0 && (
               <div>
                 <div className="sec-title">Full review</div>
                 <div className="full-review">{result.fullReview}</div>
               </div>
+)}
             </>
           )}
         </div>

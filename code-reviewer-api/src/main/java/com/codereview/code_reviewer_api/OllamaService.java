@@ -51,7 +51,7 @@ public class OllamaService {
                 -improvement one
                 -improvement two
                 FULL REVIEW:
-                 -A medium length detailedparagraph providing a comprehensive review of the code.
+                 -A medium length detailed paragraph providing a comprehensive review of the code.
                  Code to review:
                   """
                 .formatted(style) + code;
