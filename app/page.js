@@ -5,7 +5,7 @@ export default function Home() {
   const [code, setCode] = useState("");
   const [language, setLanguage] = useState("java");
   const [loading, setLoading] = useState(false);
-  const [level, setLevel] = useState("beginner");//do not commit with the API password
+  const [level, setLevel] = useState("beginner");
   const [result, setResult] = useState("");
 
   const handleSubmit = async () => {
