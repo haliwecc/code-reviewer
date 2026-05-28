@@ -15,7 +15,13 @@ Gives a full review tailored to users chosen expl;anation level
 Supports Java, Python and Javascript
 
 ## Demo
-![Page Screenshot](./images/noCode.png)
+<img width="500" height="300" alt="noCode" src="https://github.com/user-attachments/assets/c1357989-33fe-4421-91be-18d3252967c6" />
+
+<img width="1604" height="778" alt="response" src="https://github.com/user-attachments/assets/5170f853-f17a-4fe2-bba4-7956045bd51a" />
+
+<img width="1602" height="781" alt="full review" src="https://github.com/user-attachments/assets/c2639425-4694-491f-8540-8a6967280f6e" />
+
+
 
 ## Getting Started
 
@@ -36,6 +42,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Tech Stack
+Frontend | Next.js, React, CSS
+
+Backend | Java, Spring Boot 
+
+AI | Ollama (Mistral, running locally)
+
 
 ## Learn More
 
