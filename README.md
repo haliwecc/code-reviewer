@@ -1,4 +1,21 @@
+## AI Powered Code Reviewer
+
+A full stack AI code review tool that analyses code for bugs and improvements. Built as a personal project to apply what I learned about Next.js in scool and explore LLM integration for the first time.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## What it does
+Allows users to paste code snippet and get an AI review
+
+Detects bugs and flags them Red
+
+Suggests improvements in blue
+
+Gives a full review tailored to users chosen expl;anation level
+
+Supports Java, Python and Javascript
+
+## Demo
+![Page Screenshot](./images/noCode.png)
 
 ## Getting Started
 
