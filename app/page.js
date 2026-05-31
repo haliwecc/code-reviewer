@@ -39,7 +39,7 @@ export default function Home() {
   const divideResponse = (text) => {//A function that recieves the AI response(text)
     console.log("RAW OLLAMA RESPONSE:", text);
     const extract = (heading) => {//Function that extracts sections like bugs and improvements based on the heading
-      const regex = new RegExp(`${heading}:\\s*([\\s\\S]*?)(?=\\n[A-Z]+:|$)`, "i");//Build a regex to find the section based on the heading
+      const regex = new RegExp(`${heading}:\\s*([\\s\\S]*?)(?=\\n[A-Z ]+:|$)`, "i");//Build a regex to find the section based on the heading
       const match = text.match(regex);//Runs a regex on the AI response
       if (!match) {//If it doesnt exist return an empty array
         return [];
