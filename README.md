@@ -1,4 +1,27 @@
+## AI Powered Code Reviewer
+
+A full stack AI code review tool that analyses code for bugs and improvements. Built as a personal project to apply what I learned about Next.js in scool and explore LLM integration for the first time.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## What it does
+Allows users to paste code snippet and get an AI review
+
+Detects bugs and flags them Red
+
+Suggests improvements in blue
+
+Gives a full review tailored to users chosen expl;anation level
+
+Supports Java, Python and Javascript
+
+## Demo
+<img width="500" height="300" alt="noCode" src="https://github.com/user-attachments/assets/c1357989-33fe-4421-91be-18d3252967c6" />
+
+<img width="1604" height="778" alt="response" src="https://github.com/user-attachments/assets/5170f853-f17a-4fe2-bba4-7956045bd51a" />
+
+<img width="1602" height="781" alt="full review" src="https://github.com/user-attachments/assets/c2639425-4694-491f-8540-8a6967280f6e" />
+
+
 
 ## Getting Started
 
@@ -19,6 +42,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Tech Stack
+Frontend | Next.js, React, CSS
+
+Backend | Java, Spring Boot 
+
+AI | Ollama (Mistral, running locally)
+
 
 ## Learn More
 
